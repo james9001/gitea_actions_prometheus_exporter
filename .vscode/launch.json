@@ -1,0 +1,13 @@
+{
+  "configurations": [
+    {
+      "mode": "debug",
+      "name": "Debug gitea_actions_prometheus_exporter",
+      "preLaunchTask": "build",
+      "program": "${workspaceFolder}",
+      "request": "launch",
+      "type": "go"
+    }
+  ],
+  "version": "0.2.0"
+}

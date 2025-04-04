@@ -1,0 +1,14 @@
+---
+name: Publish to GitHub
+run-name: Publish to GitHub
+on:
+  workflow_dispatch:
+
+jobs:
+  Publish-To-Github:
+    uses: https://github.com/james9001/james9001-workflows/.gitea/workflows/github-publish.yaml@master
+    with:
+      github_user_name: james9001
+      github_user_email: james9001@james9001.net
+    secrets:
+      GITHUB_USER_CREDENTIALS: ${{ secrets.JAMES9001_GITHUB_CREDENTIALS }}

@@ -1,0 +1,15 @@
+---
+name: Build
+run-name: Build
+on:
+  workflow_dispatch:
+  #push:
+
+jobs:
+  Build:
+    uses: https://github.com/james9001/james9001-workflows/.gitea/workflows/build.yaml@master
+    with:
+      image_registry_namespace: ${{ secrets.FMA_IMAGE_REGISTRY_NAMESPACE }}
+      image_registry_username: ${{ secrets.FMA_IMAGE_REGISTRY_USERNAME }}
+    secrets:
+      IMAGE_REGISTRY_PASSWORD: ${{ secrets.FMA_IMAGE_REGISTRY_PASSWORD }}
