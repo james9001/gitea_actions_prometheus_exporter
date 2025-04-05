@@ -32,6 +32,6 @@ jobs:
         with:
           context: .
           push: true
-          cache-from: type=registry,ref=james9001/gitea_actions_prometheus_exporter:buildcache
-          cache-to: type=registry,ref=james9001/gitea_actions_prometheus_exporter:buildcache,mode=max
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
           tags: ${{ steps.meta.outputs.tags }}
