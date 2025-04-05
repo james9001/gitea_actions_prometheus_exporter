@@ -37,7 +37,7 @@ WORKDIR /app
 COPY --from=build /app/gitea_actions_prometheus_exporter gitea_actions_prometheus_exporter
 
 COPY entrypoint.sh /app/entrypoint.sh
-
+RUN touch .env
 #dummy copy to ensure lint phase happens
 COPY --from=lint /app/README.md /README.md
 
