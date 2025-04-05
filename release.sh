@@ -19,7 +19,7 @@ fi
 
 TAG_MESSAGE="release ${TAG_VERSION}"
 
-echo "git tag -a v${TAG_VERSION} -m ${TAG_MESSAGE}"
-git tag -a v${TAG_VERSION} -m ${TAG_MESSAGE}
+echo "git tag -a v${TAG_VERSION} -m \"${TAG_MESSAGE}\""
+git tag -a v${TAG_VERSION} -m "${TAG_MESSAGE}"
 echo "git push origin v${TAG_VERSION}"
 git push origin v${TAG_VERSION}
