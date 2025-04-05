@@ -7,7 +7,7 @@ on:
 
 jobs:
   Build:
-    uses: https://github.com/james9001/james9001-workflows/.gitea/workflows/build.yaml@master
+    uses: https://github.com/james9001/james9001-workflows/.gitea/workflows/build.yaml@7a51af90a6f3d02e29b1c75e4e2e585c88bcdf18
     with:
       image_registry_namespace: ${{ secrets.FMA_IMAGE_REGISTRY_NAMESPACE }}
       image_registry_username: ${{ secrets.FMA_IMAGE_REGISTRY_USERNAME }}
