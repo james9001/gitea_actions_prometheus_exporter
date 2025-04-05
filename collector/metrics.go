@@ -48,7 +48,7 @@ func updateActionRunsNotSuccessTotal(env *model.Environment, actionRuns []Action
 	notSuccessByRepoAndWorkflow := mapMatchingActionRunsByRepositoryNameAndWorkflowID(
 		actionRuns,
 		func(ar ActionRun) bool {
-			return *ar.Status != StatusSuccess
+			return *ar.Status != StatusSuccess && *ar.Stopped > 0
 		})
 
 	env.CurrentActionRunsNotSuccessTotal = notSuccessByRepoAndWorkflow

@@ -26,9 +26,9 @@ A dedicated demo and testing project repository is available: [gitea_actions_pro
 
 The exporter exposes the following metrics at the `/metrics` endpoint:
 
-- `action_runs_failure_total`: Total number of action runs with status "failure"
-- `action_runs_not_success_total`: Total number of action runs with status other than "success"
-- `action_runs_failure_or_cancelled_total`: Total number of action runs with status "failure" or "cancelled"
+- `action_runs_failure_total`: Total number of all action runs with status "failure"
+- `action_runs_not_success_total`: Total number of stopped action runs with status other than "success"
+- `action_runs_failure_or_cancelled_total`: Total number of all action runs with status "failure" or "cancelled"
 
 Additionally, for each metric, the following labels are available:
 - `repository_name`: The name of the repository that the action run was executed for (e.g. gitea_actions_prometheus_exporter)
