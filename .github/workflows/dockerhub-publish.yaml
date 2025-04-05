@@ -1,0 +1,37 @@
+---
+name: Docker Hub Publish
+
+on:
+  push:
+    tags: [v*]
+
+jobs:
+  docker-hub-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v4
+      - name: Docker meta
+        id: meta
+        uses: docker/metadata-action@v3
+        with:
+          images: |
+            james9001/gitea_actions_prometheus_exporter
+          tags: |
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}-latest
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          cache-from: type=registry,ref=james9001/gitea_actions_prometheus_exporter:buildcache
+          cache-to: type=registry,ref=james9001/gitea_actions_prometheus_exporter:buildcache,mode=max
+          tags: ${{ steps.meta.outputs.tags }}
