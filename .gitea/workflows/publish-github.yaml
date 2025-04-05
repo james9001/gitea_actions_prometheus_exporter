@@ -3,6 +3,7 @@ name: Publish to GitHub
 run-name: Publish to GitHub
 on:
   workflow_dispatch:
+  push:
 
 jobs:
   Publish-To-Github:
