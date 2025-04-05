@@ -20,7 +20,7 @@ The primary goal of the project is to provide a real time signal on CI failures 
 
 ## Getting Started
 
-A dedicated demo and testing project repository is available at [github.com/james9001/gitea_actions_prometheus_exporter](https://github.com/james9001/gitea_actions_prometheus_exporter). This repository contains a Docker Compose stack and configuration which will get you up and running quickly.
+A dedicated demo and testing project repository is available: [gitea_actions_prometheus_exporter-project](https://github.com/james9001/gitea_actions_prometheus_exporter-project). This repository contains a Docker Compose stack and configuration which will get you up and running quickly.
 
 ## Metrics
 
@@ -31,8 +31,8 @@ The exporter exposes the following metrics at the `/metrics` endpoint:
 - `action_runs_failure_or_cancelled_total`: Total number of action runs with status "failure" or "cancelled"
 
 Additionally, for each metric, the following labels are available:
-- `repository_name`: The name of the repository that the action run was executed for (e.g. `gitea_actions_prometheus_exporter`)
-- `workflow_id`: The name of the workflow YAML file that the action run was executed for (e.g. `build.yaml`)
+- `repository_name`: The name of the repository that the action run was executed for (e.g. gitea_actions_prometheus_exporter)
+- `workflow_id`: The name of the workflow YAML file that the action run was executed for (e.g. build.yaml)
 
 ## Configuration
 
