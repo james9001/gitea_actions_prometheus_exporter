@@ -6,6 +6,6 @@ on:
 
 jobs:
   Snyk-Code-Check:
-    uses: https://github.com/james9001/james9001-workflows/.gitea/workflows/snyk-code-golang.yaml@5825b9f63e9dac09cb3f862800ab5d9882a5da58
+    uses: https://github.com/james9001/james9001-workflows/.gitea/workflows/snyk-code-golang.yaml@a8f39127d7d0eca4158843e6f1faad834e6f4c41
     secrets:
       SNYKTOKEN: ${{ secrets.SNYKTOKEN }}

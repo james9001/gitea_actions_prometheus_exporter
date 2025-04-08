@@ -7,7 +7,7 @@ on:
 
 jobs:
   Publish-To-Github:
-    uses: https://github.com/james9001/james9001-workflows/.gitea/workflows/github-publish.yaml@7a51af90a6f3d02e29b1c75e4e2e585c88bcdf18
+    uses: https://github.com/james9001/james9001-workflows/.gitea/workflows/github-publish.yaml@a8f39127d7d0eca4158843e6f1faad834e6f4c41
     with:
       github_user_name: james9001
       github_user_email: james9001@james9001.net
