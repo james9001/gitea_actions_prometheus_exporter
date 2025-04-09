@@ -1,6 +1,6 @@
 # Gitea Actions Prometheus Exporter
 
-A Prometheus exporter for Gitea Actions that collects and exposes metrics about action runs. This exporter connects to your Gitea Actions database and provides metrics that can be scraped by Prometheus.
+A Prometheus exporter for Gitea Actions that collects and exposes metrics about action runs. This exporter connects to Gitea's Postgres database and provides metrics that can be scraped by Prometheus.
 
 The primary goal of the project is to provide a real time signal on CI failures when using Gitea Actions.
 
