@@ -67,6 +67,7 @@ The easiest way to build the container image locally is to run the `./build.sh` 
 - Install dlv for local debugging: `go install github.com/go-delve/delve/cmd/dlv@latest`, although personally I wouldn't bother, as the current state of VSCode+Delve is not great (as of 2025-04-05)
 - Run this to exec all the pre-commit hooks on the entire project: `pre-commit run --all-files`
 - Copy `.env.example` to `.env` and configure it with your settings
+- In order for linting to work in VSCode (per the workspace config file), for now, you must copy `~/go/bin/golangci-lint` to `~/go/bin/golangci-lint-v2`
 
 ### API Endpoints
 
