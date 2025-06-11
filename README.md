@@ -62,7 +62,7 @@ The easiest way to build the container image locally is to run the `./build.sh` 
 - Install Go v1.24.1. https://go.dev/doc/install
 - Ensure that your `~/go/bin` is on `$PATH`
 - Install goimports: `go install golang.org/x/tools/cmd/goimports@latest`
-- Install golangci-lint: `curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/HEAD/install.sh | sh -s -- -b $(go env GOPATH)/bin v2.0.2`
+- Install golangci-lint: `curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/HEAD/install.sh | sh -s -- -b $(go env GOPATH)/bin v2.1.6`
 - Install gofumpt: `go install mvdan.cc/gofumpt@latest`
 - Install dlv for local debugging: `go install github.com/go-delve/delve/cmd/dlv@latest`, although personally I wouldn't bother, as the current state of VSCode+Delve is not great (as of 2025-04-05)
 - Run this to exec all the pre-commit hooks on the entire project: `pre-commit run --all-files`
