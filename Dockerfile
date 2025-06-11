@@ -8,7 +8,7 @@ RUN apt install -y \
 RUN pip3 install pre-commit --break-system-packages
 RUN pip3 install xmlformatter --break-system-packages
 RUN go install golang.org/x/tools/cmd/goimports@latest
-RUN curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/HEAD/install.sh | sh -s -- -b $(go env GOPATH)/bin v2.0.2
+RUN curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/HEAD/install.sh | sh -s -- -b $(go env GOPATH)/bin v2.1.6
 
 WORKDIR /app
 
