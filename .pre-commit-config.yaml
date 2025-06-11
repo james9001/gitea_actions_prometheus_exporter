@@ -30,7 +30,7 @@ repos:
     rev: 0.2.1
     hooks:
       - id: yamlfmt
-        args: [--mapping, '2', --sequence, '4', --offset, '2']
+        args: [--mapping, '2', --sequence, '4', --offset, '2', --width, '200']
 
   - repo: https://github.com/dnephin/pre-commit-golang
     rev: v0.5.1
