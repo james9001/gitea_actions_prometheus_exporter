@@ -122,6 +122,7 @@ linters:
           deny:
             - pkg: io/ioutil
             - pkg: github.com/pkg/errors
+            - pkg: log$
   exhaustive:
     check:
       - switch
