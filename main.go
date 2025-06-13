@@ -114,7 +114,7 @@ func initialiseEnvironment() (*model.Environment, error) {
 func mainImpl() error {
 	err := godotenv.Load(".env")
 	if err != nil {
-		slog.Error("error loading .env file")
+		slog.Error("error loading .env file", "error", err)
 
 		return fmt.Errorf("error loading .env file %w", err)
 	}
