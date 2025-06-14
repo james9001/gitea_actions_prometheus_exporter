@@ -110,6 +110,16 @@ func initialiseEnvironment() (*model.Environment, error) {
 	return env, nil
 }
 
+func configureLogging() {
+	if os.Getenv("SLOG_HANDLER") == "JSON" {
+		logHandler := slog.NewJSONHandler(os.Stdout, &slog.HandlerOptions{
+			Level:     slog.LevelInfo,
+			AddSource: true,
+		})
+		slog.SetDefault(slog.New(logHandler))
+	}
+}
+
 // https://github.com/go-critic/go-critic/issues/1022#issuecomment-1443876315
 func mainImpl() error {
 	err := godotenv.Load(".env")
@@ -118,6 +128,8 @@ func mainImpl() error {
 
 		return fmt.Errorf("error loading .env file %w", err)
 	}
+
+	configureLogging()
 
 	env, envErr := initialiseEnvironment()
 	if envErr != nil {
