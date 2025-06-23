@@ -96,7 +96,8 @@ linters:
     - spancheck
     - sqlclosecheck
     - staticcheck
-    - tagalign
+    # tagalign conflicts with formatters.
+    # - tagalign
     - tagliatelle
     - testableexamples
     - testifylint
