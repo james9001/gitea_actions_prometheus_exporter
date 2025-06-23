@@ -4,6 +4,8 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"gitea_actions_prometheus_exporter/collector"
+	"gitea_actions_prometheus_exporter/model"
 	"log/slog"
 	"net/http"
 	"os"
@@ -13,9 +15,6 @@ import (
 	"github.com/gorilla/mux"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
-
-	"gitea_actions_prometheus_exporter/collector"
-	"gitea_actions_prometheus_exporter/model"
 
 	"github.com/joho/godotenv"
 )
@@ -33,8 +32,8 @@ func handleActionRuns(env *model.Environment) http.HandlerFunc {
 		}
 
 		responseWriter.Header().Set("Content-Type", "application/json")
-		err = json.NewEncoder(responseWriter).Encode(actionRuns)
 
+		err = json.NewEncoder(responseWriter).Encode(actionRuns)
 		if err != nil {
 			slog.Error("Failed to encode action runs", "error", err)
 			http.Error(responseWriter, "Internal server error", http.StatusInternalServerError)
@@ -144,11 +143,13 @@ func mainImpl() error {
 	updateInterval := 60 // Default value
 
 	if updateIntervalStr != "" {
-		var err error
 		updateInterval, err = strconv.Atoi(updateIntervalStr)
-
 		if err != nil {
-			slog.Warn("Invalid UPDATE_INTERVAL value, using default of 60 seconds", "value", updateIntervalStr)
+			slog.Warn(
+				"Invalid UPDATE_INTERVAL value, using default of 60 seconds",
+				"value",
+				updateIntervalStr,
+			)
 		}
 	}
 

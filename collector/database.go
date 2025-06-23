@@ -105,6 +105,7 @@ func scanActionRun(rows pgx.Rows) (ActionRun, error) {
 	var actionRun ActionRun
 
 	var statusInt *int32
+
 	err := rows.Scan(
 		&actionRun.ID,
 		&actionRun.Title,
@@ -125,7 +126,6 @@ func scanActionRun(rows pgx.Rows) (ActionRun, error) {
 		&actionRun.Updated,
 		&actionRun.RepositoryName,
 	)
-
 	if err != nil {
 		return ActionRun{}, errors.Join(errScanningRow, err)
 	}
@@ -145,7 +145,6 @@ func processActionRunRows(rows pgx.Rows) ([]ActionRun, error) {
 
 	for rows.Next() {
 		actionRun, err := scanActionRun(rows)
-
 		if err != nil {
 			return nil, err
 		}

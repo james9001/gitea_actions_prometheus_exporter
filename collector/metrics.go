@@ -80,7 +80,8 @@ func updateActionRunsFailureOrCancelledTotal(env *model.Environment, actionRuns 
 		for workflowID := range workflows {
 			delta := env.CurrentActionRunsFailureOrCancelledTotal[repoName][workflowID] -
 				env.PreviousActionRunsFailureOrCancelledTotal[repoName][workflowID]
-			env.ActionRunsFailureOrCancelledTotal.WithLabelValues(repoName, workflowID).Add(float64(delta))
+			env.ActionRunsFailureOrCancelledTotal.WithLabelValues(repoName, workflowID).
+				Add(float64(delta))
 		}
 	}
 }
